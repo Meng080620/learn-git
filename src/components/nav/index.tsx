@@ -4,24 +4,48 @@ interface NavProps {
 
 }
 
+const menubar = [
+    {
+        link: "#about",
+        label: "About",
+    },
+    {
+        link: "#menu",
+        label: "Menu",
+    },
+    {
+        link: "#contact",
+        label: "Contact",
+    },
+];
+
 const Nav: React.FC<NavProps> = (props) => {
 
-    const {} = props;
+    const { } = props;
 
     return (
         <nav>
             <a href="#" className="logo">Foot Wepsite</a>
 
+            {/* <ul>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul> */}
             <ul>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Menu</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+                {
+                    menubar.map((item, index) => (
+                        <li key={index}>
+                            <a href={item.link}>{item.label}</a>
+                        </li>
+                    ))
+                }
             </ul>
         </nav>
     );
